@@ -381,6 +381,7 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR int32_t ReadOnlySpan_1_get_Length
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void ReadOnlySpan_1__ctor_mFA6EE52BCF39100AE30C79E73F0F972182D0CA2A_fshared_inline (ReadOnlySpan_1_tC416A5627E04F69CA2947A2A13F0A1DF096CABAC* __this, Il2CppFullySharedGenericAny* ___0_ptr, int32_t ___1_length, const RuntimeMethod* method) ;
 
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Attribute__ctor_m79ED1BF1EE36D1E417BA89A0D9F91F8AAD8D19E2 (Attribute_tFDA8EFEFB0711976D22474794576DAF28F7440AA* __this, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float InputUnsafeUtility_GetAxis_m034889C00C914572B94F091E8EC646E86408A29F (String_t* ___0_axisName, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float InputUnsafeUtility_GetAxisRaw_m0EBF75200CDA664FCCD51BDB4C8C8798CDD6097B (String_t* ___0_axisName, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool InputUnsafeUtility_GetButton_mD23EF9339E147CD6081BC4A6B45F10EE5461CEE2 (String_t* ___0_buttonName, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool InputUnsafeUtility_GetButtonDown_mB35B46B92DA28196820B996E2420E5E320088EE4 (String_t* ___0_buttonName, const RuntimeMethod* method) ;
@@ -414,6 +415,7 @@ inline int32_t ReadOnlySpan_1_get_Length_m36BD32453530B535FE60A8123643219FEAABC3
 	return ((  int32_t (*) (ReadOnlySpan_1_t59614EA6E51A945A32B02AB17FBCBDF9A5C419C1*, const RuntimeMethod*))ReadOnlySpan_1_get_Length_m4430960CA0D0458B1A1106DD246CA9AB746B5DB2_fshared_inline)(__this, method);
 }
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ManagedSpanWrapper__ctor_m64EF660BE4BF42BC17706387C68D2BCE779802EF (ManagedSpanWrapper_tE5AE0420F9CEEE99A6586A5D9E7E73C92BC01455* __this, void* ___0_begin, int32_t ___1_length, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float InputUnsafeUtility_GetAxis_Injected_m717B83C9D8562563F16A027EFABC7169B71FA4CF (ManagedSpanWrapper_tE5AE0420F9CEEE99A6586A5D9E7E73C92BC01455* ___0_axisName, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float InputUnsafeUtility_GetAxisRaw_Injected_mBD4731C071FA30196CF204D111EE877EAB68F258 (ManagedSpanWrapper_tE5AE0420F9CEEE99A6586A5D9E7E73C92BC01455* ___0_axisName, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool InputUnsafeUtility_GetButton_Injected_mE3861DF8C700391FCBD527D308FEFB9D0C66B38D (ManagedSpanWrapper_tE5AE0420F9CEEE99A6586A5D9E7E73C92BC01455* ___0_buttonName, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool InputUnsafeUtility_GetButtonDown_Injected_m006E1D23C7C2C482AACE1323AF4AE0F200C55B93 (ManagedSpanWrapper_tE5AE0420F9CEEE99A6586A5D9E7E73C92BC01455* ___0_buttonName, const RuntimeMethod* method) ;
@@ -628,6 +630,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Touch_get_radiusVariance_m6F54BE964B91C
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Input_GetAxis_m10372E6C5FF591668D2DC5F58C58D213CC598A62 (String_t* ___0_axisName, const RuntimeMethod* method) 
+{
+	{
+		String_t* L_0 = ___0_axisName;
+		float L_1;
+		L_1 = InputUnsafeUtility_GetAxis_m034889C00C914572B94F091E8EC646E86408A29F(L_0, NULL);
+		return L_1;
+	}
+}
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Input_GetAxisRaw_m47C0CF8E090561A2F407A4E11D5F2A45044EB8E4 (String_t* ___0_axisName, const RuntimeMethod* method) 
 {
 	{
@@ -805,6 +816,14 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Input_GetKeyDown_mB237DEA6244132670D3899
 		L_1 = Input_GetKeyDownInt_m0B655F969FCBC011BC2616E3E5A657CF7D76568A(L_0, NULL);
 		return L_1;
 	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Input_set_simulateMouseWithTouches_m1D86DBF4BDCAA4AF3F15EE2BD51FB4C215D2AC6E (bool ___0_value, const RuntimeMethod* method) 
+{
+	typedef void (*Input_set_simulateMouseWithTouches_m1D86DBF4BDCAA4AF3F15EE2BD51FB4C215D2AC6E_ftn) (bool);
+	static Input_set_simulateMouseWithTouches_m1D86DBF4BDCAA4AF3F15EE2BD51FB4C215D2AC6E_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (Input_set_simulateMouseWithTouches_m1D86DBF4BDCAA4AF3F15EE2BD51FB4C215D2AC6E_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Input::set_simulateMouseWithTouches(System.Boolean)");
+	_il2cpp_icall_func(___0_value);
 }
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Input_get_mousePosition_mFF21FBD2647DAE2A23BD4C45571CA95D05A0A42C (const RuntimeMethod* method) 
 {
@@ -1196,6 +1215,75 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool InputUnsafeUtility_GetKeyDownString__Unm
 	bool icallRetVal = _il2cpp_icall_func(___0_name, ___1_nameLen);
 	return icallRetVal;
 }
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float InputUnsafeUtility_GetAxis_m034889C00C914572B94F091E8EC646E86408A29F (String_t* ___0_axisName, const RuntimeMethod* method) 
+{
+	ReadOnlySpan_1_t59614EA6E51A945A32B02AB17FBCBDF9A5C419C1 V_0;
+	memset((&V_0), 0, sizeof(V_0));
+	Il2CppChar* V_1 = NULL;
+	ManagedSpanWrapper_tE5AE0420F9CEEE99A6586A5D9E7E73C92BC01455 V_2;
+	memset((&V_2), 0, sizeof(V_2));
+	float V_3 = 0.0f;
+	{
+		auto __finallyBlock = il2cpp::utils::Finally([&]
+		{
+
+FINALLY_0034:
+			{
+				uintptr_t L_0 = (il2cpp_codegen_conv<uintptr_t,int32_t,int32_t,false,false>(0,NULL));
+				V_1 = (Il2CppChar*)L_0;
+				return;
+			}
+		});
+		try
+		{
+			{
+				String_t* L_1 = ___0_axisName;
+				bool L_2;
+				L_2 = StringMarshaller_TryMarshalEmptyOrNullString_mA7E06E9C8BEF97EC745F7DE392C854F5F5B49999_inline(L_1, (&V_2), NULL);
+				if (L_2)
+				{
+					goto IL_0029_1;
+				}
+			}
+			{
+				String_t* L_3 = ___0_axisName;
+				ReadOnlySpan_1_t59614EA6E51A945A32B02AB17FBCBDF9A5C419C1 L_4;
+				L_4 = MemoryExtensions_AsSpan_m0EB07912D71097A8B05F586158966837F5C3DB38_inline(L_3, NULL);
+				V_0 = L_4;
+				Il2CppChar* L_5;
+				L_5 = ReadOnlySpan_1_GetPinnableReference_mB710059C1A1A30270065958DE8345808C6683638((&V_0), NULL);
+				V_1 = L_5;
+				Il2CppChar* L_6 = V_1;
+				uintptr_t L_7 = (il2cpp_codegen_conv<uintptr_t,Il2CppChar*,intptr_t,false,false>(L_6,NULL));
+				int32_t L_8;
+				L_8 = ReadOnlySpan_1_get_Length_m36BD32453530B535FE60A8123643219FEAABC351_inline((&V_0), NULL);
+				ManagedSpanWrapper__ctor_m64EF660BE4BF42BC17706387C68D2BCE779802EF((&V_2), (void*)L_7, L_8, NULL);
+			}
+
+IL_0029_1:
+			{
+				float L_9;
+				L_9 = InputUnsafeUtility_GetAxis_Injected_m717B83C9D8562563F16A027EFABC7169B71FA4CF((&V_2), NULL);
+				V_3 = L_9;
+				goto IL_0038;
+			}
+		}
+		catch(Il2CppNativeThreadAbortException&)
+		{
+			__finallyBlock.SetNativeThreadAbortOccurred();
+		}
+		catch(Il2CppExceptionWrapper& e)
+		{
+			__finallyBlock.StoreException(e.ex);
+		}
+	}
+
+IL_0038:
+	{
+		float L_10 = V_3;
+		return L_10;
+	}
+}
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float InputUnsafeUtility_GetAxis__Unmanaged_m288AEE066E04CCFDD229629882CA42DBD1D85CF2 (uint8_t* ___0_axisName, int32_t ___1_axisNameLen, const RuntimeMethod* method) 
 {
 	typedef float (*InputUnsafeUtility_GetAxis__Unmanaged_m288AEE066E04CCFDD229629882CA42DBD1D85CF2_ftn) (uint8_t*, int32_t);
@@ -1515,6 +1603,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool InputUnsafeUtility_GetButtonUp__Unmanage
 	if (!_il2cpp_icall_func)
 	_il2cpp_icall_func = (InputUnsafeUtility_GetButtonUp__Unmanaged_mCCE34158CE05432541102B1C2AEC6545E25D0732_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Internal.InputUnsafeUtility::GetButtonUp__Unmanaged(System.Byte*,System.Int32)");
 	bool icallRetVal = _il2cpp_icall_func(___0_buttonName, ___1_buttonNameLen);
+	return icallRetVal;
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float InputUnsafeUtility_GetAxis_Injected_m717B83C9D8562563F16A027EFABC7169B71FA4CF (ManagedSpanWrapper_tE5AE0420F9CEEE99A6586A5D9E7E73C92BC01455* ___0_axisName, const RuntimeMethod* method) 
+{
+	typedef float (*InputUnsafeUtility_GetAxis_Injected_m717B83C9D8562563F16A027EFABC7169B71FA4CF_ftn) (ManagedSpanWrapper_tE5AE0420F9CEEE99A6586A5D9E7E73C92BC01455*);
+	static InputUnsafeUtility_GetAxis_Injected_m717B83C9D8562563F16A027EFABC7169B71FA4CF_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (InputUnsafeUtility_GetAxis_Injected_m717B83C9D8562563F16A027EFABC7169B71FA4CF_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Internal.InputUnsafeUtility::GetAxis_Injected(UnityEngine.Bindings.ManagedSpanWrapper&)");
+	float icallRetVal = _il2cpp_icall_func(___0_axisName);
 	return icallRetVal;
 }
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float InputUnsafeUtility_GetAxisRaw_Injected_mBD4731C071FA30196CF204D111EE877EAB68F258 (ManagedSpanWrapper_tE5AE0420F9CEEE99A6586A5D9E7E73C92BC01455* ___0_axisName, const RuntimeMethod* method) 
