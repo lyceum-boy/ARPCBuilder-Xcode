@@ -1,0 +1,8 @@
+.DS_Store
+Thumbs.db
+DerivedData/
+*.xcarchive/
+*.dSYM/
+*.ipa
+*.xcuserstate
+xcuserdata/

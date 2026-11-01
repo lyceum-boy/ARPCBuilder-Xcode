@@ -1,0 +1,68 @@
+name: Build iOS IPA
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Show Xcode version
+        run: xcodebuild -version
+
+      - name: Verify Unity runtime
+        run: |
+          ls -lh Frameworks/UnityRuntime.framework/UnityRuntime
+
+      - name: Build unsigned iOS app
+        run: |
+          set -o pipefail
+          xcodebuild \
+            -project Unity-iPhone.xcodeproj \
+            -scheme Unity-iPhone \
+            -configuration Release \
+            -sdk iphoneos \
+            -destination 'generic/platform=iOS' \
+            -derivedDataPath "$RUNNER_TEMP/DerivedData" \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            build
+
+      - name: Create unsigned IPA
+        run: |
+          set -euo pipefail
+
+          PRODUCTS="$RUNNER_TEMP/DerivedData/Build/Products/Release-iphoneos"
+
+          APP_PATH=$(find "$PRODUCTS" -maxdepth 1 \
+            -type d -name '*.app' -print -quit)
+
+          if [ -z "$APP_PATH" ]; then
+            echo "ERROR: iOS application not found"
+            exit 1
+          fi
+
+          mkdir -p "$RUNNER_TEMP/package/Payload"
+
+          cp -R "$APP_PATH" "$RUNNER_TEMP/package/Payload/"
+
+          cd "$RUNNER_TEMP/package"
+
+          zip -qry "$GITHUB_WORKSPACE/ARPCBuilder-unsigned.ipa" Payload
+
+      - name: Upload IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: ARPCBuilder-unsigned-IPA
+          path: ARPCBuilder-unsigned.ipa
+          if-no-files-found: error
+          retention-days: 7
