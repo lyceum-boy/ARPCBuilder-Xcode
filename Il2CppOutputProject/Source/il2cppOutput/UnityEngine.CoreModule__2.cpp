@@ -1771,6 +1771,10 @@ struct Object_tC12DECB6760A7F2CBF65D9DCF18D044C2D97152C_marshaled_com
 {
 	intptr_t ___m_CachedPtr;
 };
+struct PrimitiveType_t72F3E6BA10E41F934F63C4F6DF88388E57911C44 
+{
+	int32_t ___value__;
+};
 struct RangeAttribute_t8765B7FFCE8F675585C966D7E9FC8FE555D84557  : public PropertyAttribute_t5E0CB5A6CDA6E24CBD4FF26DE3B0C29D8BB54BF0
 {
 	float ___min;
@@ -3613,6 +3617,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Object__ctor_m2149FA40CEC8D82AC20D3508AB
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Coroutine_ReleaseCoroutine_mEEFBA6D7CABF4E6FAF7C115B53BF530B30208869 (intptr_t ___0_ptr, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ArgumentException__ctor_m8F9D40CE19D19B698A70F9A258640EB52DB39B62 (ArgumentException_tAD90411542A20A9C72D5CDA3A84181D8B947A263* __this, String_t* ___0_message, String_t* ___1_paramName, const RuntimeMethod* method) ;
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void* IntPtr_op_Explicit_m2728CBA081E79B97DDCF1D4FAD77B309CA1E94BF (intptr_t ___0_value, const RuntimeMethod* method) ;
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t GameObject_CreatePrimitive_Injected_m8551C722C6323D519798801BFC975D567DE25E5D (int32_t ___0_type, const RuntimeMethod* method) ;
 inline intptr_t MarshalledUnityObject_MarshalNotNull_TisGameObject_t76FEDD663AB33C991A9C9A23129337651094216F_m0278A52AA1F06089A078ACF3134B3847F1EC2A2F_inline (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___0_obj, const RuntimeMethod* method)
 {
 	return ((  intptr_t (*) (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F*, const RuntimeMethod*))MarshalledUnityObject_MarshalNotNull_TisIl2CppSharedGenericObject_mCE897EC9A79983B4B1E6E2C8342452256309044A_gshared_inline)(___0_obj, method);
@@ -20238,6 +20243,23 @@ IL2CPP_EXTERN_C void FailedToLoadScriptObject_t51C7A75B7D39FE935901EB6E75FE2D020
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* GameObject_CreatePrimitive_m13C0A691E679A83DD595913200A1DD9A906EB47B (int32_t ___0_type, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&MarshalledUnityObject_Unmarshal_TisGameObject_t76FEDD663AB33C991A9C9A23129337651094216F_m732C7234C82557122A550C9F6DBAB6D0EAE8289C_RuntimeMethod_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	{
+		int32_t L_0 = ___0_type;
+		intptr_t L_1;
+		L_1 = GameObject_CreatePrimitive_Injected_m8551C722C6323D519798801BFC975D567DE25E5D(L_0, NULL);
+		GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* L_2;
+		L_2 = MarshalledUnityObject_Unmarshal_TisGameObject_t76FEDD663AB33C991A9C9A23129337651094216F_m732C7234C82557122A550C9F6DBAB6D0EAE8289C_inline(L_1, MarshalledUnityObject_Unmarshal_TisGameObject_t76FEDD663AB33C991A9C9A23129337651094216F_m732C7234C82557122A550C9F6DBAB6D0EAE8289C_RuntimeMethod_var);
+		return L_2;
+	}
+}
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Component_t39FBE53E5EFCF4409111FB22C15FF73717632EC3* GameObject_GetComponent_m99E12753EA84947521DC711CA33F452B5E65B474 (GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* __this, Type_t* ___0_type, const RuntimeMethod* method) 
 {
 	static bool s_Il2CppMethodInitialized;
@@ -21350,6 +21372,15 @@ IL_000f:
 		L_2 = GameObject_IsDestroying_Injected_m14BDEA0BF02DD8204B9038443FAE02B6FF64B345(G_B2_0, NULL);
 		return L_2;
 	}
+}
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t GameObject_CreatePrimitive_Injected_m8551C722C6323D519798801BFC975D567DE25E5D (int32_t ___0_type, const RuntimeMethod* method) 
+{
+	typedef intptr_t (*GameObject_CreatePrimitive_Injected_m8551C722C6323D519798801BFC975D567DE25E5D_ftn) (int32_t);
+	static GameObject_CreatePrimitive_Injected_m8551C722C6323D519798801BFC975D567DE25E5D_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (GameObject_CreatePrimitive_Injected_m8551C722C6323D519798801BFC975D567DE25E5D_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.GameObject::CreatePrimitive_Injected(UnityEngine.PrimitiveType)");
+	intptr_t icallRetVal = _il2cpp_icall_func(___0_type);
+	return icallRetVal;
 }
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR intptr_t GameObject_GetComponent_Injected_m6C58DF43D232B53F544D9EF38CE9811AB8B3229D (intptr_t ___0__unity_self, Type_t* ___1_type, const RuntimeMethod* method) 
 {

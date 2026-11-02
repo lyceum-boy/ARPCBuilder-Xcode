@@ -1990,6 +1990,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_GameObject_get_layer_Injected();
 		Register_UnityEngine_GameObject_get_layer_Injected();
 
+		//System.IntPtr UnityEngine.GameObject::CreatePrimitive_Injected(UnityEngine.PrimitiveType)
+		void Register_UnityEngine_GameObject_CreatePrimitive_Injected();
+		Register_UnityEngine_GameObject_CreatePrimitive_Injected();
+
 		//System.IntPtr UnityEngine.GameObject::GetComponentInChildren_Injected(System.IntPtr,System.Type,System.Boolean)
 		void Register_UnityEngine_GameObject_GetComponentInChildren_Injected();
 		Register_UnityEngine_GameObject_GetComponentInChildren_Injected();
