@@ -3158,9 +3158,25 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_LineRenderer_SetPosition_Injected();
 		Register_UnityEngine_LineRenderer_SetPosition_Injected();
 
+		//System.Void UnityEngine.LineRenderer::set_endWidth_Injected(System.IntPtr,System.Single)
+		void Register_UnityEngine_LineRenderer_set_endWidth_Injected();
+		Register_UnityEngine_LineRenderer_set_endWidth_Injected();
+
+		//System.Void UnityEngine.LineRenderer::set_numCapVertices_Injected(System.IntPtr,System.Int32)
+		void Register_UnityEngine_LineRenderer_set_numCapVertices_Injected();
+		Register_UnityEngine_LineRenderer_set_numCapVertices_Injected();
+
 		//System.Void UnityEngine.LineRenderer::set_positionCount_Injected(System.IntPtr,System.Int32)
 		void Register_UnityEngine_LineRenderer_set_positionCount_Injected();
 		Register_UnityEngine_LineRenderer_set_positionCount_Injected();
+
+		//System.Void UnityEngine.LineRenderer::set_startWidth_Injected(System.IntPtr,System.Single)
+		void Register_UnityEngine_LineRenderer_set_startWidth_Injected();
+		Register_UnityEngine_LineRenderer_set_startWidth_Injected();
+
+		//System.Void UnityEngine.LineRenderer::set_useWorldSpace_Injected(System.IntPtr,System.Boolean)
+		void Register_UnityEngine_LineRenderer_set_useWorldSpace_Injected();
+		Register_UnityEngine_LineRenderer_set_useWorldSpace_Injected();
 
 		//System.Void UnityEngine.LineRenderer::set_widthMultiplier_Injected(System.IntPtr,System.Single)
 		void Register_UnityEngine_LineRenderer_set_widthMultiplier_Injected();
