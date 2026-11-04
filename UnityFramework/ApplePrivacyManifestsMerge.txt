@@ -9,3 +9,6 @@ Adding elements from Unity
 				1:
 					C617.1
 
+--------------------------------------------------
+
+Adding elements from Library/PackageCache/com.unity.cloud.gltfast@11ddc2436f97/Plugins/UnityCloudGltfast.xcprivacy
