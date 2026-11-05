@@ -1,8 +1,36 @@
+# Operating systems
 .DS_Store
 Thumbs.db
-DerivedData/
-*.xcarchive/
-*.dSYM/
-*.ipa
+Desktop.ini
+
+# IDE local settings
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Xcode user-specific files
+**/xcuserdata/
 *.xcuserstate
-xcuserdata/
+*.xccheckout
+*.xcscmblueprint
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+
+# Generated Xcode build outputs
+/build/
+/DerivedData/
+
+# IPA and debug artifacts
+*.ipa
+*.dSYM/
+*.dSYM.zip
+*.xcarchive/
+
+# Temporary files
+*.tmp
+*.bak
+*.orig
+*.log

@@ -55,9 +55,44 @@ jobs:
 
           cp -R "$APP_PATH" "$RUNNER_TEMP/package/Payload/"
 
+          # Unity 6.6 workaround: a build-time UnityRuntime.framework can be
+          # embedded in the app. Remove it ONLY from the packaged copy,
+          # after Xcode has finished building the app.
+          APP_NAME="$(basename "$APP_PATH")"
+          PACKAGED_APP="$RUNNER_TEMP/package/Payload/$APP_NAME"
+          RUNTIME_PATH="$PACKAGED_APP/Frameworks/UnityRuntime.framework"
+
+          if [ ! -d "$PACKAGED_APP/Frameworks/UnityFramework.framework" ]; then
+            echo "ERROR: UnityFramework.framework is missing from the app"
+            exit 1
+          fi
+
+          if [ -d "$RUNTIME_PATH" ]; then
+            rm -rf "$RUNTIME_PATH"
+            echo "Removed embedded UnityRuntime.framework from IPA payload"
+          else
+            echo "UnityRuntime.framework is not embedded; nothing to remove"
+          fi
+
           cd "$RUNNER_TEMP/package"
 
           zip -qry "$GITHUB_WORKSPACE/ARPCBuilder-unsigned.ipa" Payload
+
+          # Verify the resulting IPA contains the application runtime, but not
+          # the unwanted UnityRuntime.framework.
+          python3 - <<'PYIPA'
+          import os
+          import zipfile
+          ipa = os.path.join(os.environ['GITHUB_WORKSPACE'], 'ARPCBuilder-unsigned.ipa')
+          with zipfile.ZipFile(ipa) as archive:
+              names = archive.namelist()
+              has_framework = any('/Frameworks/UnityFramework.framework/' in n for n in names)
+              has_runtime = any('/Frameworks/UnityRuntime.framework/' in n for n in names)
+          print(f'UnityFramework present: {has_framework}')
+          print(f'UnityRuntime embedded: {has_runtime}')
+          if not has_framework or has_runtime:
+              raise SystemExit('Invalid Unity framework layout in packaged IPA')
+          PYIPA
 
       - name: Upload IPA
         uses: actions/upload-artifact@v4
